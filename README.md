@@ -2,6 +2,12 @@
 
 A real-time option chain visualization application with WebSocket connectivity.
 
+Video Demonstration
+
+Part 1: https://www.loom.com/share/203dc1ae5c4444d6a778f713646ae349?sid=1c2d4be9-dc3b-4186-b2c8-efc501040ed3
+
+Part 2: https://www.loom.com/share/317854a123714f56baf77e8e293f464b?sid=bf1bc719-115d-44a3-8f27-7037bdf493c1
+
 ## Features
 
 - Real-time option data visualization
