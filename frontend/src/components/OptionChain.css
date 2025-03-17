@@ -1,0 +1,254 @@
+.option-chain-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.option-chain-container.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.underlying-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: bold;
+}
+
+.underlying-info.dark-mode {
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+.underlying-price span {
+  font-size: 1.2em;
+}
+
+.option-chain-header {
+  display: flex;
+  background-color: #2c3e50;
+  color: white;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.option-chain-header.dark-mode {
+  background-color: #333;
+}
+
+.option-chain-list {
+  flex: 1;
+  overflow: auto;
+}
+
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .option-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-row.at-the-money {
+  background-color: rgba(255, 235, 59, 0.1);
+}
+
+.option-row.at-the-money.dark-mode {
+  background-color: rgba(255, 235, 59, 0.15);
+}
+
+.option-row.in-the-money .call {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.option-row.in-the-money .put {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.option-row.out-of-the-money .call {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.option-row.out-of-the-money .put {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.dark-mode .option-row.in-the-money .call {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.dark-mode .option-row.in-the-money .put {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.dark-mode .option-row.out-of-the-money .call {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.dark-mode .option-row.out-of-the-money .put {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.option-cell {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.option-cell.highlight {
+  animation: price-update 1s ease;
+}
+
+@keyframes price-update {
+  0% { background-color: rgba(255, 215, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
+.price-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-weight: 500;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.price-cell.dark-mode {
+  color: #fff;
+}
+
+.strike-cell {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.change {
+  font-size: 0.8rem;
+}
+
+.change.positive {
+  color: #4caf50;
+}
+
+.change.negative {
+  color: #f44336;
+}
+
+.dark-mode .change.positive {
+  color: #81c784;
+}
+
+.dark-mode .change.negative {
+  color: #e57373;
+}
+
+.subscribe-section {
+  margin-left: 10px;
+}
+
+.positive-change {
+  color: #4caf50;
+}
+
+.negative-change {
+  color: #f44336;
+}
+
+.dark-mode .positive-change {
+  color: #81c784;
+}
+
+.dark-mode .negative-change {
+  color: #e57373;
+}
+
+.percent-change {
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+.positive {
+  color: #4caf50;
+}
+
+.negative {
+  color: #f44336;
+}
+
+.dark-mode .positive {
+  color: #81c784;
+}
+
+.dark-mode .negative {
+  color: #e57373;
+}
+
+.price-cell.updated {
+  animation: flash 0.8s ease-out;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(255, 255, 0, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.dark-mode-list {
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(33, 33, 33, 0.8);
+  scrollbar-width: thin;
+}
+
+.dark-mode-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode-list::-webkit-scrollbar-track {
+  background: rgba(33, 33, 33, 0.8);
+}
+
+.dark-mode-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .price-cell {
+    padding: 5px;
+  }
+  
+  .strike-cell {
+    width: 60px;
+  }
+}
